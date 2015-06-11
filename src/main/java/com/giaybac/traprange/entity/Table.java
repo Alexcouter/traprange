@@ -36,6 +36,15 @@ public class Table {
     public List<TableRow> getRows() {
         return rows;
     }
+    
+    public List<String> getARow(int rowNb){
+		List<String> rowContent = new ArrayList<>();
+		for(TableCell c: rows.get(rowNb).getCells())
+		{
+			rowContent.add(c.getContent());	
+		}
+		return rowContent;
+	}
 
     public String toHtml() {
         StringBuilder retVal = new StringBuilder();
